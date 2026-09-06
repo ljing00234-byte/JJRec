@@ -1,7 +1,9 @@
 import pandas as pd
 import os
 
-DATA = "/Users/jj/Downloads/GOAI agent/JKRec/KuaiRand-1K/data"
+DATA = os.environ.get("KUAIRAND_DATA_DIR")
+if not DATA:
+    raise RuntimeError("请设置环境变量 KUAIRAND_DATA_DIR，指向本地 KuaiRand-1K/data 目录")
 
 std1 = pd.read_csv(f"{DATA}/log_standard_4_08_to_4_21_1k.csv")
 std2 = pd.read_csv(f"{DATA}/log_standard_4_22_to_5_08_1k.csv")

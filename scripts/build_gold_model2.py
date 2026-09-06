@@ -1,6 +1,9 @@
 import pandas as pd
+import os
 
-DATA = "/Users/jj/Downloads/GOAI agent/JKRec/KuaiRand-1K/data"
+DATA = os.environ.get("KUAIRAND_DATA_DIR")
+if not DATA:
+    raise RuntimeError("请设置环境变量 KUAIRAND_DATA_DIR，指向本地 KuaiRand-1K/data 目录")
 
 train = pd.read_csv("data_cleaned/model2_features_train.csv")
 test = pd.read_csv("data_cleaned/model2_features_test.csv")

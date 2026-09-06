@@ -1,9 +1,12 @@
 import pandas as pd
+import os
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.metrics import roc_auc_score, log_loss, brier_score_loss, average_precision_score
 
-DATA = "/Users/jj/Downloads/GOAI agent/JKRec/KuaiRand-1K/data"
+DATA = os.environ.get("KUAIRAND_DATA_DIR")
+if not DATA:
+    raise RuntimeError("请设置环境变量 KUAIRAND_DATA_DIR，指向本地 KuaiRand-1K/data 目录")
 
 m2_train = pd.read_csv("data_cleaned/model2_features_train.csv")
 m2_test = pd.read_csv("data_cleaned/model2_features_test.csv")

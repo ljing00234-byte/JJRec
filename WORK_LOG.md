@@ -2,14 +2,15 @@
 
 记录 my-agent 项目搭建过程中的关键决定，及背后的理由。跟 README.md 分开维护——README 说"现在是什么样"，这份文档说"怎么走到这一步、为什么"。
 
-对照目录（只读）：/Users/jj/Downloads/GOAI agent/JKRec
-工作目录（可写）：/Users/jj/Desktop/RERand/my-agent
+工作目录：本仓库根目录（可写）
+
+本项目使用 [KuaiRand-1K](https://github.com/chongminggao/KuaiRand) 数据集，全程手动编写代码，未复制任何外部代码或配置。
 
 ## 2026-09-05
 
 ### 决策 1：复现纪律
 
-选择：A —— 全程手打，不复制粘贴 JKRec 里任何文件/代码/配置。
+选择：A —— 全程手打。
 理由：不放心自己能分清"数据"和"逻辑"的界限，用"是不是自己手敲的"这个机械标准代替判断。
 
 ### 决策 2：Mac 底子核实
@@ -39,7 +40,7 @@
 
 ### 决策 7：环境验收标准
 
-在原有"能 activate venv、python 能 import、工作路径是 my-agent、对照路径是 JKRec"基础上，加入冒烟测试（.venv 内能装包、能 import）与本文档作为决定留痕的载体。
+在原有"能 activate venv、python 能 import、工作路径是 my-agent"基础上，加入冒烟测试（.venv 内能装包、能 import）与本文档作为决定留痕的载体。
 
 ### 决策 8：冒烟测试结果
 
